@@ -1,4 +1,5 @@
-FROM cljkondo/clj-kondo:${VERSION} AS binary
+ARG VERSION=latest
+FROM cljkondo/clj-kondo:$VERSION AS binary
 
 FROM node:10-slim
 
