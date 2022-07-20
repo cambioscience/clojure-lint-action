@@ -1,4 +1,4 @@
-FROM cljkondo/clj-kondo:latest AS binary
+FROM cljkondo/clj-kondo:${VERSION} AS binary
 
 FROM node:10-slim
 

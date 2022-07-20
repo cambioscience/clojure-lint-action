@@ -15,9 +15,13 @@ inputs:
   github_token:
     description: 'Github token to report linter results back to check'
     required: true
+  version:
+    description: 'Specify version of clj-kondo Dockerfile to use'
+    default: latest
 runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
     CHECK_NAME: ${{ inputs.check-name }}
     LINT_ARGS: ${{ inputs.clj-kondo-args }}
+    VERSION: ${{ inputs.version }}
