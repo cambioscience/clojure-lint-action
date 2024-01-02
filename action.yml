@@ -15,6 +15,15 @@ inputs:
   github_token:
     description: 'Github token to report linter results back to check'
     required: true
+  levels:
+    description: 'Annotate files in levels (e.g. "warning, error" or "error"), errors are always anotated, this is different from --fail-level clj-kondo param'
+    default: 'info, warning, error'
+  file-statuses:
+    description: 'Annotate warnings as errors (and fail CI run) only in files which have following git statuses (e.g. "added, modified", or "removed, renamed"), leave blank to annotate all clj-kondo warnings as warnings, errors are always anotated'
+    default: ''
+  file-match:
+    description: 'Annotate warnings as errors (and fail CI run) only in files with name matches the pattern (e.g. ".clj(c|s)?$"), leave blank to annotate all clj-kondo warnings as warnings, errors are always anotated'
+    default: ''
   version:
     description: 'Specify version of clj-kondo Dockerfile to use'
     default: latest
@@ -25,3 +34,6 @@ runs:
     CHECK_NAME: ${{ inputs.check-name }}
     LINT_ARGS: ${{ inputs.clj-kondo-args }}
     VERSION: ${{ inputs.version }}
+    LEVELS: ${{ inputs.levels }}
+    FILE_STATUSES: ${{ inputs.file-statuses }}
+    FILE_MATCH: ${{ inputs.file-match }}

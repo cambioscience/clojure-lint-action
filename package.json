@@ -1,0 +1,31 @@
+{
+    "name": "clojure-lint-action",
+    "description": "Run clj-kondo and annotate source code changes with results.",
+    "version": "1.0.0",
+    "private": true,
+    "author": "Kirill Chernyshov, Vlad Bokov",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vlad-obrizum/clojure-lint-action.git"
+    },
+    "homepage": "https://github.com/vlad-obrizum/clojure-lint-action",
+    "bugs": {
+        "url": "https://github.com/vlad-obrizum/clojure-lint-action/issues"
+    },
+    "keywords": [],
+    "main": "lib/main.js",
+    "engines": {
+        "node": "^20.10.0"
+    },
+    "scripts": {
+        "format": "prettier --write **/*.js"
+    },
+    "dependencies": {
+        "@actions/core": "^1.2.2",
+        "@actions/github": "^2.1.0"
+    },
+    "devDependencies": {
+        "prettier": "^1.19.1"
+    }
+}
